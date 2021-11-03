@@ -1,8 +1,14 @@
 import { useLocalStorage } from "./useLocalStorage"
 
 
-export default function useDarkMode(key, initialFormValues, cb){
-    const [formValues, setFormValues] = useLocalStorage(key, initialFormValues)
-
-
+ const useDarkMode =(initialValue) =>{
+    const [darkMode, setDarkMode] = useLocalStorage(initialValue, false)
+    const setDarkModeValue= (value) => {
+        setDarkMode(value)
+    }
+    
+    
+    
+      return (darkMode, setDarkModeValue);
 }
+export default useDarkMode
